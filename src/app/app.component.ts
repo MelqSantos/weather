@@ -11,15 +11,18 @@ export class AppComponent implements OnInit {
   
   title = 'weather';
 
-  list: ApiResponse;
+  time: ApiResponse;
 
   constructor(private service: ComponentService){}
 
   ngOnInit(): void {
     this.service.getWeatherData().subscribe((resp: ApiResponse) => {
-      this.list = resp;
-      console.log(resp)
+      this.time = resp;
     });
+  }
+
+  public round(numb: number): number{
+    return Math.round(numb);
   }
   
 }

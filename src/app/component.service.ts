@@ -11,12 +11,12 @@ export class ComponentService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=rio de janeiro&lang=pt_br&appid=9b13af9e54a24db7d20c8198ccf1f4ea'; // Substitua pela URL da API
+  private apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=rio de janeiro&lang=pt_br&units=metric&appid={api_id}'; 
+  // Tempo atual
 
   getWeatherData(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.apiUrl).pipe(
       map(response => {
-        // Manipule a resposta se necessário
         return response;
       })
     );

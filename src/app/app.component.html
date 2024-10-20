@@ -1,4 +1,4 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <mat-icon class="material-symbols-outlined">cloud</mat-icon>
   <span>Weather</span>
   <span class="spacer"></span>
@@ -8,4 +8,39 @@
   <button mat-icon-button class="icon">
     <mat-icon>share</mat-icon>
   </button>
-</mat-toolbar>
+</mat-toolbar> -->
+<div class="row main">
+  <div class="col-md-8 m1">
+    <div class="container-fluid">
+      
+      <form class="search">
+        <input type="text" class="form-control" placeholder="Nome da cidade..." aria-label="Search">
+        <button type="button" class="btn btn-success">Pesquisar</button>
+      </form>
+
+      <div class="row main-weather">
+        <div class="col-md-6">
+          <div class="title">
+            <h2>{{time.name}}</h2>
+            <span>{{time.weather[0].description}}</span>
+            <h1>{{round(time.main.temp)}}°C</h1>
+          </div>
+        </div>
+        
+        <div class="col-md-6 icon-weather">
+          <img src="../assets/icons/{{time.weather[0].icon}}.png">
+        </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+
+
+  <div class="col-md-4 m2"></div>
+</div>
